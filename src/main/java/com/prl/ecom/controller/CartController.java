@@ -76,9 +76,8 @@ public class CartController {
     }
 
     private Long getUserIdFromAuth(Authentication authentication) {
-        String email = authentication.getPrincipal().toString();
-        // In a real app, fetch user ID from database using email
-        // For now, we'll use a simple approach
+        // In a real app, fetch user ID from database using email from authentication.getPrincipal()
+        // For now, return a simple approach
         return 1L;  // This should be replaced with actual user lookup
     }
 }

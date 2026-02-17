@@ -72,7 +72,7 @@ public class OrderController {
     }
 
     private Long getUserIdFromAuth(Authentication authentication) {
-        String email = authentication.getPrincipal().toString();
+        // In a real app, fetch user ID from database using email from authentication.getPrincipal()
         return 1L;  // This should be replaced with actual user lookup
     }
 }

@@ -13,7 +13,6 @@ import com.prl.ecom.exception.ResourceNotFoundException;
 import com.prl.ecom.repository.CartRepository;
 import com.prl.ecom.repository.CartItemRepository;
 import com.prl.ecom.repository.ProductRepository;
-import com.prl.ecom.repository.UserRepository;
 import com.prl.ecom.service.CartService;
 import com.prl.ecom.util.AppConstants;
 import lombok.extern.slf4j.Slf4j;
@@ -37,9 +36,6 @@ public class CartServiceImpl implements CartService {
 
     @Autowired
     private ProductRepository productRepository;
-
-    @Autowired
-    private UserRepository userRepository;
 
     @Override
     public CartDTO getCart(Long userId) {

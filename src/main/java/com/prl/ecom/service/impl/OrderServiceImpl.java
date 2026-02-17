@@ -14,6 +14,7 @@ import com.prl.ecom.exception.ResourceNotFoundException;
 import com.prl.ecom.repository.AddressRepository;
 import com.prl.ecom.repository.CartRepository;
 import com.prl.ecom.repository.OrderRepository;
+import com.prl.ecom.repository.OrderItemRepository;
 import com.prl.ecom.repository.UserRepository;
 import com.prl.ecom.service.OrderService;
 import com.prl.ecom.util.AppConstants;
@@ -43,6 +44,9 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     private AddressRepository addressRepository;
+
+    @Autowired
+    private OrderItemRepository orderItemRepository;
 
     @Override
     public OrderDTO createOrder(Long userId, CreateOrderRequest request) {
@@ -92,7 +96,7 @@ public class OrderServiceImpl implements OrderService {
                     .price(cartItem.getProduct().getPrice())
                     .subtotal(cartItem.getProduct().getPrice().multiply(BigDecimal.valueOf(cartItem.getQuantity())))
                     .build();
-            // Save order item (persisted through order cascade)
+            orderItemRepository.save(orderItem);
         }
 
         // Clear cart

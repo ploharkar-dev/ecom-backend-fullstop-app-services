@@ -6,7 +6,6 @@ import com.prl.ecom.dto.UserRegisterRequest;
 import com.prl.ecom.dto.LoginResponse;
 import com.prl.ecom.dto.RefreshTokenRequest;
 import com.prl.ecom.entity.User;
-import com.prl.ecom.exception.BadRequestException;
 import com.prl.ecom.exception.DuplicateException;
 import com.prl.ecom.exception.UnauthorizedException;
 import com.prl.ecom.repository.UserRepository;

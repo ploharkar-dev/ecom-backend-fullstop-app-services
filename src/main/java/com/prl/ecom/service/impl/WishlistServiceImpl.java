@@ -35,9 +35,6 @@ public class WishlistServiceImpl implements WishlistService {
     @Autowired
     private ProductRepository productRepository;
 
-    @Autowired
-    private UserRepository userRepository;
-
     @Override
     public WishlistDTO getWishlist(Long userId) {
         Wishlist wishlist = wishlistRepository.findByUserId(userId)
