@@ -35,5 +35,6 @@ public class Address {
     private String country;
 
     @Column(columnDefinition = "boolean default false")
+    @Builder.Default
     private Boolean isDefault = false;
 }

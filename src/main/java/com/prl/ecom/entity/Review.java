@@ -34,14 +34,13 @@ public class Review {
     private String comment;
 
     @Column(columnDefinition = "INT DEFAULT 0")
+    @Builder.Default
     private Integer helpfulCount = 0;
 
     @Column(name = "created_at", nullable = false, updatable = false)
-    @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime createdAt;
 
     @Column(name = "updated_at", nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime updatedAt;
 
     @PrePersist

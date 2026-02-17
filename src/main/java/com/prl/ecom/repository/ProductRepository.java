@@ -21,7 +21,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     
     Optional<Product> findBySku(String sku);
     
-    @Query("SELECT p FROM Product p WHERE p.active = true AND p.price between :minPrice AND :maxPrice AND p.categoryId = :categoryId")
+    @Query("SELECT p FROM Product p WHERE p.active = true AND p.price between :minPrice AND :maxPrice AND p.category.id = :categoryId")
     Page<Product> findByPriceRangeAndCategory(
         @Param("minPrice") BigDecimal minPrice,
         @Param("maxPrice") BigDecimal maxPrice,

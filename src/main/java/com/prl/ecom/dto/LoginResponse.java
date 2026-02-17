@@ -14,6 +14,7 @@ import lombok.Setter;
 public class LoginResponse {
     private String accessToken;
     private String refreshToken;
+    @Builder.Default
     private String tokenType = "Bearer";
     private Long expiresIn;
     private UserDTO user;

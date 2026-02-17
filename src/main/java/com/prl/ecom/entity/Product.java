@@ -38,20 +38,21 @@ public class Product {
     private String sku;
 
     @Column(columnDefinition = "DECIMAL(3, 2) DEFAULT 0")
+    @Builder.Default
     private BigDecimal averageRating = BigDecimal.ZERO;
 
     @Column(columnDefinition = "INT DEFAULT 0")
+    @Builder.Default
     private Integer totalReviews = 0;
 
     @Column(columnDefinition = "boolean default true")
+    @Builder.Default
     private Boolean active = true;
 
     @Column(name = "created_at", nullable = false, updatable = false)
-    @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime createdAt;
 
     @Column(name = "updated_at", nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime updatedAt;
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
